@@ -2,7 +2,23 @@
 
 #### Table of content
 1. [Block Structure](#block-structure)
-2. [Variable](#variables)
+2. [Variables](#variables)
+3. [RECORD types](#record-types)
+4. [ASSERT statement](#assert-statement)
+5. [IF statement](#if-statement)
+6. [Loops](#loops)
+7. [CREATE FUNCTION](#create-function)
+8. [PL/pgSQL parameter modes](#pl-pgsql-parameter-modes)
+9. [Function that returns a table](#function-that-returns-a-table)
+10. [DROP FUNCTION statement](#drop-function-statement)
+11. [Calling a function](#calling-a-function)
+12. [Transaction](#transaction)
+13. [CREATE PROCEDURE](#create-procedure)
+14. [DROP PROCEDURE statement](#drop-procedure-statement)
+15. [CREATE TRIGGER](#create-trigger)
+16. [DROP/DISABLE/ENABLE TRIGGER](#drop-disable-enable-trigger)
+17. [CREATE VIEW](#create-view)
+18. [DROP VIEW statement](#drop-view-statement)
 
 ## Block Structure <a name = "block-structure"></a>
 
@@ -59,7 +75,7 @@ BEGIN
 END first_block $$;
 ```
 
-## Variables <a name=""></a>
+## Variables <a name="variables"></a>
 
 #### Syntax of declaring a variable.
 
@@ -110,7 +126,7 @@ BEGIN
 END $$;
 ```
 
-## RECORD types <a name=""></a>
+## RECORD types <a name="record-types"></a>
 
 A `RECORD` variable is similar to a `ROWTYPE` variable. It can hold only one row of a result set.
 
@@ -147,7 +163,7 @@ BEGIN
 END $$;
 ```
 
-## ASSERT statement <a name=""></a>
+## ASSERT statement <a name="assert-statement"></a>
 
 The `ASSERT` statement is a useful shorthand for inserting debugging checks into PL/pgSQL code.
 
@@ -174,7 +190,7 @@ BEGIN
 END $$;
 ```
 
-## IF statement <a name=""></a>
+## IF statement <a name="if-statement"></a>
 
 The following illustrates the simplest form of the `IF` statement:
 
@@ -236,7 +252,7 @@ BEGIN
 END $$;
 ```
 
-## Loops <a name=""></a>
+## Loops <a name="loops"></a>
 
 #### Syntax of WHILE loop
 
@@ -304,7 +320,7 @@ BEGIN
 END $$;
 ```
 
-## CREATE FUNCTION <a name=""></a>
+## CREATE FUNCTION <a name="create-function"></a>
 
 The `CREATE FUNCTION` statement allows you to define a new user-defined function.
 
@@ -346,7 +362,7 @@ BEGIN
 END $$;
 ```
 
-## PL/pgSQL parameter modes <a name=""></a>
+## PL/pgSQL parameter modes <a name="pl-pgsql-parameter-modes"></a>
 
 |IN                      |OUT                            |INOUT                                                 |
 |------------------------|-------------------------------|------------------------------------------------------|
@@ -409,7 +425,7 @@ BEGIN
 END $$;
 ```
 
-## Function that returns a table <a name=""></a>
+## Function that returns a table <a name="function-that-returns-a-table"></a>
 
 To define a function that returns a table, you use the following form of the create function statement:
 
@@ -448,7 +464,7 @@ BEGIN
 END $$;
 ```
 
-## DROP FUNCTION statement <a name=""></a>
+## DROP FUNCTION statement <a name="drop-function-statement"></a>
 
 #### Syntax of DROP FUNCTION
 
@@ -457,7 +473,7 @@ DROP FUNCTION [IF EXISTS] function_name(argument_list)
 [CASCADE | RESTRICT]
 ```
 
-## Calling a function <a name=""></a>
+## Calling a function <a name="calling-a-function"></a>
 
 #### Calling a function example
 
@@ -539,7 +555,7 @@ FROM get_platinum();
 |'01'|'John Chaorai'   |999            |'Rice Fields' |
 |'04'|'Sithata Kung'   |550            |'Gabinlapat'  |
 
-## Transaction <a name=""></a>
+## Transaction <a name="transaction"></a>
 
 A database transaction is a single unit of work that consists of one or more operations.
 
@@ -662,7 +678,7 @@ FROM members;
 |----|-----------------|---------------|--------------|
 |'01'|'Zark Muckerberg'|200            |'Metaverse'   |
 
-## CREATE PROCEDURE <a name=""></a>
+## CREATE PROCEDURE <a name="create-procedure"></a>
 
 A drawback of user-defined functions is that they cannot execute transactions. So PostgreSQL 11 introduced stored procedures that support transactions.
 
@@ -790,7 +806,7 @@ CALL reset_payment();
 |'05'|'Jesus Nice'     |0              |'Jerusalem'   |
 |'06'|'Zark Muckerberg'|0              |'Metaverse'   |
 
-## DROP PROCEDURE statement <a name=""></a>
+## DROP PROCEDURE statement <a name="drop-procedure-statement"></a>
 
 #### Syntax of DROP FUNCTION
 
@@ -799,7 +815,7 @@ DROP PROCEDURE [IF EXISTS] procedure_name(argument_list)
 [CASCADE | RESTRICT]
 ```
 
-## Trigger <a name=""></a>
+## Trigger <a name="trigger"></a>
 
 A PostgreSQL trigger is a function invoked automatically whenever an event associated with a table occurs. An event could be any of the following: `INSERT`, `UPDATE`, `DELETE` or `TRUNCATE`.
 
@@ -809,7 +825,7 @@ PostgreSQL provides two main types of triggers:
 
 The differences between the two kinds are how many times the trigger is invoked and at what time.
 
-## CREATE TRIGGER <a name=""></a>
+## CREATE TRIGGER <a name="create-trigger"></a>
 
 To create a new trigger in PostgreSQL, you follow these steps:
 
@@ -905,7 +921,7 @@ SELECT * FROM payment_audits;
 
 The change was logged in the `payment_audits` table by the trigger.
 
-## DROP/DISABLE/ENABLE TRIGGER syntax <a name=""></a>
+## DROP/DISABLE/ENABLE TRIGGER <a name="drop-disable-enable-trigger"></a>
 
 #### Syntax of drop a trigger
 
@@ -928,7 +944,7 @@ ALTER TABLE table_name
 ENABLE TRIGGER {trigger_name | ALL};
 ```
 
-## CREATE VIEW <a name=""></a>
+## CREATE VIEW <a name="create-view"></a>
 
 #### Syntax of CREATE VIEW statement
 
@@ -981,7 +997,7 @@ FROM gold_max_payment;
 
 If we update `members` table, any views related to the table also get updated.
 
-## DROP VIEW statement <a name=""></a>
+## DROP VIEW statement <a name="drop-view-statement"></a>
 
 #### Syntax of drop view
 
