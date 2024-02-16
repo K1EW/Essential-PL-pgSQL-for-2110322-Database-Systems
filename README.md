@@ -891,6 +891,8 @@ BEGIN
 END $$;
 ```
 
+The `OLD` represents the row before the update while the `NEW` represents the new row that will be updated.
+
 Second, bind the trigger function to the `members` table. The trigger name is `update_payment`. Before the value of the `monthly_payment` column is updated.
 
 ```pgsql
