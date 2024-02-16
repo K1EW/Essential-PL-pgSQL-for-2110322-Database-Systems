@@ -1,6 +1,6 @@
 <h1>Essential PL/pgSQL for 2110322 Database Systems</h1>
 
-#### Table of content
+#### Table of contents
 1. [Block Structure](#block-structure)
 2. [Variables](#variables)
 3. [RECORD types](#record-types)
