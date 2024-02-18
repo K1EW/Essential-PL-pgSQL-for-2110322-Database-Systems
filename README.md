@@ -670,6 +670,7 @@ ROLLBACK;
 If you retrieve data from the members table, you’ll won’t see the changes because it was rolled back.
 
 ```pgsql
+-- from session 1
 SELECT *
 FROM members;
 ```
